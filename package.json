@@ -4,7 +4,7 @@
 	"private": true,
 	"scripts": {
 		"dev": "vite dev",
-		"build": "vite build && echo 'trampbunny.tv' > ./docs/CNAME",
+		"build": "vite build && echo 'trampbunny.tv' > ./docs/CNAME && touch ./docs/.nojekyll",
 		"preview": "vite preview",
 		"test": "playwright test",
 		"test:unit": "vitest",
