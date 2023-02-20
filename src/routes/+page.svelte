@@ -1,20 +1,62 @@
 
-
 <script>
-	import { onMount } from 'svelte';
-          // create a new hydra-synth instance
-          onMount(() => {
-            var hydra = new Hydra({ detectAudio: false })
-            src(o0).layer(osc(5, 0.1, 0.1).colorama(0.99).luma(()=>Math.sin(time*0.9)*0.5))
-  .modulate(shape(4).repeat(4,4).luma(), 2)
-  .modulateRepeat(osc(10, 0.01).rotate(1), 0.6,4, 0.1, 0.01)
-  .modulate(noise(0.8), 0.3)
-  .out(o0)
-          });
 
 </script>
 
+<main>
+  <h1>trampbunny</h1>
+  <h2>live-coded music loops and pixel soups</h2>
+  <ul>
+    <li><button>twitch</button></li>
+    <li><button>instagram</button></li>
+    <li><button>demo reel</button></li>
+  </ul>
+</main>
 
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<style>
+  main {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    text-align: center;
+  }
 
+  h1 {
+    font-size: 50px;
+    font-family: '2Peas';
+    color: #C495FF;
+  }
+
+  h2 {
+    font-size: 15px;
+    font-family: 'kidsplay';
+    color: #C495FF;
+  }
+ ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0px;
+
+ }
+
+ li {
+  margin-top: 20px;
+ }
+
+
+
+
+ button {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-family: 'kidsplay';
+  font-size: 20px;
+  width: 200px;
+ }
+
+</style>
