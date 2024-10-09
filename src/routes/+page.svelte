@@ -33,6 +33,7 @@
     <li><a href="https://twitch.tv/trampbunny"><button>twitch</button></a></li>
     <li><a href="https://instagram.com/trampbunny.tv"><button>instagram</button></a></li>
     <li><a href="https://youtu.be/M5gzqi69yh8"><button>demo reel</button></a></li>
+    <li><a href="https://soundcloud.com/june_106/trampbunny-live-a-karmen-camina-binaural-render"><button>live recording</button></a></li>
     <li><a href="mailto:trampbunny@proton.me"><button>contact</button></a></li>
   </ul>
 </main>
