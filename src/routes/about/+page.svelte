@@ -68,7 +68,7 @@
   }
 
   p {
-    font-size: 25px;
+    font-size: 15px;
     color: white;
     background-color: rgba(0, 0, 0, 0.3);
   }
@@ -121,6 +121,10 @@
 
     #about-section {
       width: 60%;
+    }
+
+    p {
+      font-size: 25px;
     }
  }
 
