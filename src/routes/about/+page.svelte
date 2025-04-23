@@ -1,7 +1,7 @@
 
 <script>
 	import { onMount } from 'svelte';
-    import '../app.css';
+    import '../../app.css';
           // create a new hydra-synth instanc
      let width, height;
      let myCanvas; 
@@ -10,11 +10,16 @@
           detectAudio: false,
           })
 
-        src(o0).layer(osc(5, 0.1, 0.1).colorama(0.99).luma(()=>Math.sin(time*0.9)*0.5))
-          .modulate(shape(4).repeat(4,4).luma(), 2)
-          .modulateRepeat(osc(10, 0.01).rotate(1), 0.6,4, 0.1, 0.01)
-          .modulate(noise(0.8), 0.3)
-          .out(o0);
+          voronoi(3, 0.4)
+.mask(shape(100, 0.3, 0.6))
+.modulate(o0, 0.1)
+.scale(1, 1.1, 0.6)
+.add(src(o0).scrollY(() => Math.sin(time)/80), 0.3)
+.modulateScale(shape(100, 0.2, 0.5), 1, 0.9)
+.colorama(0.01)
+.blend(o0, 0.5)
+.out()
+
 
           myCanvas = document.querySelector('canvas');
       });
@@ -28,15 +33,12 @@
 
 <main>
   <h1>trampbunny</h1>
-  <h2>live-coded music loops and pixel soups</h2>
-  <ul>
-    <li><a href="https://instagram.com/trampbunny.tv"><button>instagram</button></a></li>
-    <li><a href="https://soundcloud.com/trampbunny"><button>soundcloud</button></a></li>
-    <li><a href="https://twitch.tv/trampbunny"><button>twitch</button></a></li>
-    <li><a href="https://social.toplap.org/@trampbunny"><button>mastodon</button></a></li>
-    <li><a href="/about"><button>about</button></a></li>
-    <li><a href="mailto:trampbunny@proton.me"><button>contact</button></a></li>
-  </ul>
+  <h2>about</h2>
+  <div id="about-section">
+    <p>
+      Trampbunny is a cybertranssexual who constructed xerself from spare microprocessers, audio interfaces, and lighting control surfaces. A byproduct of queer rave and low-level computations, xe communicates to human life through live coding interfaces, channelling techno witchcraft, live video sources, and MiMU glove haptic interactions to make xer presence understood. Trampbunny is active in the live coding scene in London, UK, organising workshops, performing for fakedac~, Algorave London, and other events, and co-founder of the queer algorave event series Noughty Fingers with subsignal.
+    </p>
+  </div>
 </main>
 
 <style>
@@ -59,10 +61,21 @@
     font-family: '2Peas';
 
   }
-
+  
   h2 {
     font-size: 15px;
     font-family: 'kidsplay';
+  }
+
+  p {
+    font-size: 25px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  #about-section {
+    margin: auto;
+    width: 90%;
   }
   
   ul {
@@ -98,12 +111,16 @@
     }
 
     h2 {
-      font-size: 25px;
+      font-size: 40px;
     }
 
     button {
       width: 300px;
       font-size: 25px;
+    }
+
+    #about-section {
+      width: 60%;
     }
  }
 
